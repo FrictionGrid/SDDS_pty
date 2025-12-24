@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDDS Organizer | รายละเอียดงาน</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">
+          <img src="logo.png" alt="SDDS Organizer">
+        </div>
+        <div>
+          <div class="brand__name">SDDS</div>
+          <div class="brand__tagline">Event Organizer</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="customers.html">Customers</a>
+        <a href="customer_detail.html">Customer</a>
+        <a href="email_ai.html">Email AI</a>
+        <a href="project.html">Events</a>
+        <a href="project_detail.html" class="active">Event Detail</a>
+      </nav>
+    </aside>
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div>
+        <div class="topbar__title">รายละเอียดงานอีเว้นท์</div>
+        <div class="topbar__menu">Events / Event Details</div>
+      </div>
+      <div class="avatar"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main main--full">
+      <div class="content-wrapper">
+
+        <!-- Project Header -->
+        <div class="project-header">
+          <div class="project-header__top">
+            <div class="project-header__info">
+              <div class="project-header__title">งานเปิดตัวสินค้า New Product Launch 2024</div>
+              <div class="project-header__meta">
+                <div class="project-header__id">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  รหัส: EVT-2024-001
+                </div>
+                <div class="project-header__customer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  ลูกค้า: <a href="customer_detail.html">บริษัท ไทยเทคโนโลยี จำกัด</a>
+                </div>
+              </div>
+            </div>
+            <div class="status-badge status-badge--active">กำลังเตรียมงาน</div>
+          </div>
+
+          <div class="project-header__progress">
+            <div class="project-header__progress-label">
+              <span>ความคืบหน้างาน</span>
+              <span>78%</span>
+            </div>
+            <div class="project-header__progress-bar">
+              <div class="project-header__progress-fill" style="width: 78%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <div class="quick-actions__label">Quick Actions:</div>
+          <button class="btn-quick" id="btnUpdateStatus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            Update Status
+          </button>
+          <button class="btn-quick" id="btnAddComment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Add Comment
+          </button>
+          <button class="btn-quick" id="btnAttachFile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+            </svg>
+            Attach File
+          </button>
+        </div>
+
+        <!-- Project Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card metric-card--budget">
+            <div class="metric-card__label">งบประมาณงาน</div>
+            <div class="metric-card__value">฿2,500,000</div>
+            <div class="metric-card__detail">ใช้ไป: ฿1,950,000 (78%)</div>
+          </div>
+
+          <div class="metric-card metric-card--team">
+            <div class="metric-card__label">ทีมงาน</div>
+            <div class="metric-card__value">12 คน</div>
+            <div class="metric-card__detail">ทีมจัดงาน + Coordinator</div>
+          </div>
+
+          <div class="metric-card metric-card--progress">
+            <div class="metric-card__label">ความคืบหน้า</div>
+            <div class="metric-card__value">78%</div>
+            <div class="metric-card__detail">วันจัดงาน: 15 พ.ค. 67</div>
+          </div>
+        </div>
+
+        <!-- Main Layout: 2 Columns -->
+        <div style="display: grid; grid-template-columns: 1fr 400px; gap: 28px; align-items: start;">
+
+          <!-- Left Column -->
+          <div style="display: flex; flex-direction: column; gap: 28px;">
+
+            <!-- Budget Comparison -->
+            <div class="budget-comparison">
+              <div class="budget-comparison__header">งบประมาณเปรียบเทียบ</div>
+              <div class="budget-bars">
+
+                <div class="budget-bar">
+                  <div class="budget-bar__label">
+                    <span class="budget-bar__label-text">งบประมาณทั้งหมด</span>
+                    <span class="budget-bar__label-value">฿2,500,000</span>
+                  </div>
+                  <div class="budget-bar__track">
+                    <div class="budget-bar__fill budget-bar__fill--budget" style="width: 100%;">
+                      100%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="budget-bar">
+                  <div class="budget-bar__label">
+                    <span class="budget-bar__label-text">ใช้ไปแล้ว</span>
+                    <span class="budget-bar__label-value">฿1,950,000</span>
+                  </div>
+                  <div class="budget-bar__track">
+                    <div class="budget-bar__fill budget-bar__fill--spent" style="width: 78%;">
+                      78%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="budget-bar">
+                  <div class="budget-bar__label">
+                    <span class="budget-bar__label-text">คงเหลือ</span>
+                    <span class="budget-bar__label-value">฿550,000</span>
+                  </div>
+                  <div class="budget-bar__track">
+                    <div class="budget-bar__fill budget-bar__fill--remaining" style="width: 22%;">
+                      22%
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="timeline-section">
+              <div class="timeline-section__header">ไทม์ไลน์การเตรียมงาน</div>
+              <div class="timeline-list">
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Concept & Planning</div>
+                    <div class="timeline-item__dates">1 มี.ค. - 10 มี.ค. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>100%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Venue & Vendor Booking</div>
+                    <div class="timeline-item__dates">11 มี.ค. - 20 มี.ค. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>100%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Design & Creative Production</div>
+                    <div class="timeline-item__dates">21 มี.ค. - 5 เม.ย. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>100%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Setup & Decoration</div>
+                    <div class="timeline-item__dates">6 เม.ย. - 10 พ.ค. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 85%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Rehearsal & Testing</div>
+                    <div class="timeline-item__dates">11 พ.ค. - 14 พ.ค. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>40%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 40%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__header">
+                    <div class="timeline-item__title">Event Day Execution</div>
+                    <div class="timeline-item__dates">15 พ.ค. 67</div>
+                  </div>
+                  <div class="timeline-item__progress">
+                    <div class="timeline-item__progress-label">
+                      <span>ความคืบหน้า</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="timeline-item__progress-bar">
+                      <div class="timeline-item__progress-fill" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Task List Table -->
+            <div class="task-table-section">
+              <div class="task-table-section__header">
+                <span>งานทั้งหมด</span>
+                <button class="btn-add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  เพิ่มงาน
+                </button>
+              </div>
+
+              <table class="task-table">
+                <thead>
+                  <tr>
+                    <th>ชื่องาน</th>
+                    <th>ผู้รับผิดชอบ</th>
+                    <th>สถานะ</th>
+                    <th>กำหนดเสร็จ</th>
+                    <th>ความสำคัญ</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td class="task-table__name">Venue Booking Confirmation</td>
+                    <td class="task-table__assignee">ปราณี Event Coordinator</td>
+                    <td><div class="status-badge status-badge--completed">เสร็จสิ้น</div></td>
+                    <td class="task-table__due">20 มี.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--high">สูง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Catering Arrangement</td>
+                    <td class="task-table__assignee">สมชาย F&B Manager</td>
+                    <td><div class="status-badge status-badge--active">กำลังทำ</div></td>
+                    <td class="task-table__due">8 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--high">สูง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Stage & Lighting Design</td>
+                    <td class="task-table__assignee">นภัส Production Designer</td>
+                    <td><div class="status-badge status-badge--active">กำลังทำ</div></td>
+                    <td class="task-table__due">10 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--high">สูง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Sound System Setup</td>
+                    <td class="task-table__assignee">วิชัย Technical Team</td>
+                    <td><div class="status-badge status-badge--active">กำลังทำ</div></td>
+                    <td class="task-table__due">12 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--medium">กลาง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Guest Registration System</td>
+                    <td class="task-table__assignee">สมใจ Registration Lead</td>
+                    <td><div class="status-badge status-badge--delayed">ล่าช้า</div></td>
+                    <td class="task-table__due">13 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--medium">กลาง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Photographer & Videographer</td>
+                    <td class="task-table__assignee">ชาติชาย Media Team</td>
+                    <td><div class="status-badge status-badge--active">กำลังทำ</div></td>
+                    <td class="task-table__due">10 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--medium">กลาง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Security & Staff Coordination</td>
+                    <td class="task-table__assignee">ทีม Operations</td>
+                    <td><div class="status-badge status-badge--delayed">ล่าช้า</div></td>
+                    <td class="task-table__due">12 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--high">สูง</div></td>
+                  </tr>
+
+                  <tr>
+                    <td class="task-table__name">Event Staff Briefing</td>
+                    <td class="task-table__assignee">สมศรี HR Lead</td>
+                    <td><div class="status-badge status-badge--delayed">ล่าช้า</div></td>
+                    <td class="task-table__due">14 พ.ค. 67</td>
+                    <td><div class="priority-badge priority-badge--low">ต่ำ</div></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+
+            <!-- Communication Section -->
+            <div class="communication-section">
+              <div class="communication-section__header">การสื่อสารล่าสุด</div>
+              <div class="communication-list">
+
+                <div class="communication-item">
+                  <div class="communication-item__header">
+                    <div class="communication-item__type">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      Meeting
+                    </div>
+                    <div class="communication-item__date">12 พ.ค. 67</div>
+                  </div>
+                  <div class="communication-item__subject">Final Coordination Meeting</div>
+                  <div class="communication-item__participants">ทีมจัดงาน, Vendors, ลูกค้า</div>
+                </div>
+
+                <div class="communication-item">
+                  <div class="communication-item__header">
+                    <div class="communication-item__type">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      Email
+                    </div>
+                    <div class="communication-item__date">10 พ.ค. 67</div>
+                  </div>
+                  <div class="communication-item__subject">Progress Report - Week 10</div>
+                  <div class="communication-item__participants">ถึง: ลูกค้า, Stakeholders</div>
+                </div>
+
+                <div class="communication-item">
+                  <div class="communication-item__header">
+                    <div class="communication-item__type">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Team Chat
+                    </div>
+                    <div class="communication-item__date">9 พ.ค. 67</div>
+                  </div>
+                  <div class="communication-item__subject">Daily Check-in - สรุปงานวันนี้</div>
+                  <div class="communication-item__participants">ทีมจัดงานทั้งหมด</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Risk Section -->
+            <div class="risk-section">
+              <div class="risk-section__header">ความเสี่ยงงาน</div>
+              <div class="risk-list">
+
+                <div class="risk-item">
+                  <div class="risk-item__header">
+                    <div class="risk-item__title">Weather Risk - ฝนตกในวันงาน</div>
+                    <div class="risk-item__level risk-item__level--high">สูง</div>
+                  </div>
+                  <div class="risk-item__status">สถานะ: กำลังแก้ไข - เตรียม Backup Plan</div>
+                </div>
+
+                <div class="risk-item risk-item--medium">
+                  <div class="risk-item__header">
+                    <div class="risk-item__title">Vendor Delay - Catering จัดส่งล่าช้า</div>
+                    <div class="risk-item__level risk-item__level--medium">กลาง</div>
+                  </div>
+                  <div class="risk-item__status">สถานะ: ติดตาม - มี Backup Vendor</div>
+                </div>
+
+                <div class="risk-item risk-item--low">
+                  <div class="risk-item__header">
+                    <div class="risk-item__title">Guest Confirmation - ยืนยันแขกล่าช้า</div>
+                    <div class="risk-item__level risk-item__level--low">ต่ำ</div>
+                  </div>
+                  <div class="risk-item__status">สถานะ: รอแก้ไข - ติดตามต่อเนื่อง</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Decision Section -->
+            <div class="decision-section">
+              <div class="decision-section__header">การตัดสินใจ</div>
+              <div class="decision-list">
+
+                <div class="decision-item decision-item--pending">
+                  <div class="decision-item__header">
+                    <div class="decision-item__title">เพิ่ม MC ชื่อดังสำหรับงาน</div>
+                    <div class="decision-item__status decision-item__status--pending">รออนุมัติ</div>
+                  </div>
+                  <div class="decision-item__meta">ผู้รับผิดชอบ: Event Manager • รอมา 3 วัน</div>
+                </div>
+
+                <div class="decision-item decision-item--approved">
+                  <div class="decision-item__header">
+                    <div class="decision-item__title">เพิ่มเวลา Rehearsal เป็น 2 วัน</div>
+                    <div class="decision-item__status decision-item__status--approved">อนุมัติแล้ว</div>
+                  </div>
+                  <div class="decision-item__meta">ผู้อนุมัติ: Client CEO • วันที่ 8 พ.ค. 67</div>
+                </div>
+
+                <div class="decision-item decision-item--pending">
+                  <div class="decision-item__header">
+                    <div class="decision-item__title">เปลี่ยนสถานที่จัดงานเป็น Indoor</div>
+                    <div class="decision-item__status decision-item__status--pending">รออนุมัติ</div>
+                  </div>
+                  <div class="decision-item__meta">ผู้รับผิดชอบ: Venue Manager • รอมา 5 วัน</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="activity-log-section">
+              <div class="activity-log-section__header">กิจกรรมล่าสุด</div>
+              <div class="activity-log-list">
+
+                <div class="activity-log-item">
+                  <div class="activity-log-item__icon activity-log-item__icon--task">✓</div>
+                  <div class="activity-log-item__content">
+                    <div class="activity-log-item__text">
+                      <span class="activity-log-item__user">ปราณี Event Coordinator</span> ทำ "Venue Booking" เสร็จสิ้น
+                    </div>
+                    <div class="activity-log-item__time">2 ชั่วโมงที่แล้ว</div>
+                  </div>
+                </div>
+
+                <div class="activity-log-item">
+                  <div class="activity-log-item__icon activity-log-item__icon--comment">💬</div>
+                  <div class="activity-log-item__content">
+                    <div class="activity-log-item__text">
+                      <span class="activity-log-item__user">วิชัย Technical Team</span> เพิ่มความคิดเห็นใน "Sound System Setup"
+                    </div>
+                    <div class="activity-log-item__time">3 ชั่วโมงที่แล้ว</div>
+                  </div>
+                </div>
+
+                <div class="activity-log-item">
+                  <div class="activity-log-item__icon activity-log-item__icon--file">📎</div>
+                  <div class="activity-log-item__content">
+                    <div class="activity-log-item__text">
+                      <span class="activity-log-item__user">นภัส Production Designer</span> แนบไฟล์ "stage-design-v3.pdf"
+                    </div>
+                    <div class="activity-log-item__time">5 ชั่วโมงที่แล้ว</div>
+                  </div>
+                </div>
+
+                <div class="activity-log-item">
+                  <div class="activity-log-item__icon activity-log-item__icon--status">🔄</div>
+                  <div class="activity-log-item__content">
+                    <div class="activity-log-item__text">
+                      <span class="activity-log-item__user">Event Manager</span> อัปเดตสถานะงานเป็น "กำลังเตรียมงาน - 78%"
+                    </div>
+                    <div class="activity-log-item__time">1 วันที่แล้ว</div>
+                  </div>
+                </div>
+
+                <div class="activity-log-item">
+                  <div class="activity-log-item__icon activity-log-item__icon--task">✓</div>
+                  <div class="activity-log-item__content">
+                    <div class="activity-log-item__text">
+                      <span class="activity-log-item__user">สมชาย F&B Manager</span> ทำ "Catering Proposal" เสร็จสิ้น
+                    </div>
+                    <div class="activity-log-item__time">2 วันที่แล้ว</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+
+  <div class="chatbot-panel" id="chatbot">
+    <div class="chatbot-header">
+      SDDS Organizer AI
+      <button onclick="toggleChat()">×</button>
+    </div>
+    <div class="chatbot-body">
+      <div class="chatbot-msg bot">สวัสดีครับ! มีอะไรให้ผมช่วยเกี่ยวกับงานอีเว้นท์ไหมครับ?</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" placeholder="พิมพ์ข้อความถึง AI..." />
+      <button>ส่ง</button>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/project_detail.js"></script>
+</body>
+
+</html>

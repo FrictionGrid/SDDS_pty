@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDDS | Enterprise Dashboard</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">
+          <img src="logo.png" alt="SDDS">
+        </div>
+        <div>
+          <div class="brand__name">SDDS</div>
+          <div class="brand__tagline">Enterprise System</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="customers.html">Customers</a>
+        <a href="customer_detail.html">Customer</a>
+        <a href="email-ai.html">Email AI</a>
+        <a href="project.html">Project</a>
+      </nav>
+    </aside>
+
+    <header class="topbar">
+      <div>
+        <div class="topbar__title">SDDS Enterprise Dashboard</div>
+        <div class="topbar__menu">Dashboard</div>
+      </div>
+      <div class="avatar"></div>
+    </header>
+
+    <main class="main">
+      <div class="card">System Overview</div>
+    </main>
+
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+
+  <div class="chatbot-panel" id="chatbot">
+    <div class="chatbot-header">
+      SDDS AI Assistant
+      <button onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chatbot-body">
+      <div class="chatbot-msg bot">สวัสดีครับ มีอะไรให้ช่วยไหม</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" placeholder="พิมพ์คำสั่งถึง AI..." />
+      <button>ส่ง</button>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

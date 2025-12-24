@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDDS | Enterprise Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand__logo">
+                    <img src="logo.png" alt="SDDS">
+                </div>
+                <div>
+                    <div class="brand__name">SDDS</div>
+                    <div class="brand__tagline">Enterprise System</div>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="customers.html">Customers</a>
+                <a href="customer_detail.html">Customer</a>
+                <a href="email_ai.html">Email AI</a>
+                <a href="project.html">Project</a>
+                <a href="project_detail.html" >ProjectDetail</a>
+            </nav>
+        </aside>
+
+        <header class="topbar">
+            <div>
+                <div class="topbar__title">ภาพรวมประสิทธิภาพ</div>
+                <div class="topbar__menu">Dashboard / Performance Overview</div>
+            </div>
+            <div class="avatar"></div>
+        </header>
+
+        <main class="main main--full">
+            <div class="content-wrapper">
+
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+
+                    <!-- KPI Card 1: รายได้รวม -->
+                    <div class="kpi-card kpi-card--success">
+                        <div class="kpi-card__label">รายได้รวม</div>
+                        <div class="kpi-card__value">฿12.5M</div>
+                        <div class="kpi-card__change kpi-card__change--positive">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                            +15.3% จากเดือนก่อน
+                        </div>
+                    </div>
+
+                    <!-- KPI Card 2: ลูกค้าใหม่ -->
+                    <div class="kpi-card kpi-card--info">
+                        <div class="kpi-card__label">ลูกค้าใหม่</div>
+                        <div class="kpi-card__value">248</div>
+                        <div class="kpi-card__change kpi-card__change--positive">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                            +8.2% จากเดือนก่อน
+                        </div>
+                    </div>
+
+                    <!-- KPI Card 3: ปิดการขาย -->
+                    <div class="kpi-card">
+                        <div class="kpi-card__label">ปิดการขาย</div>
+                        <div class="kpi-card__value">45 ดีล</div>
+                        <div class="kpi-card__change kpi-card__change--positive">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                            +12.5% จากเดือนก่อน
+                        </div>
+                    </div>
+
+                    <!-- KPI Card 4: อัตราความสำเร็จโครงการ -->
+                    <div class="kpi-card kpi-card--warning">
+                        <div class="kpi-card__label">อัตราความสำเร็จโครงการ</div>
+                        <div class="kpi-card__value">87.5%</div>
+                        <div class="kpi-card__change kpi-card__change--negative">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            -2.1% จากเดือนก่อน
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Dashboard Layout: Main + Sidebar -->
+                <div class="dashboard-layout">
+
+                    <!-- Main Column -->
+                    <div class="dashboard-main">
+
+                        <!-- Revenue & Customer Trend Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <div>
+                                    <div class="chart-header__title">แนวโน้มรายได้และลูกค้า</div>
+                                    <div class="chart-header__subtitle">เปรียบเทียบรายเดือนปี 2567</div>
+                                </div>
+                                <div class="chart-header__actions">
+                                    <button class="chart-filter active">6 เดือน</button>
+                                    <button class="chart-filter">1 ปี</button>
+                                </div>
+                            </div>
+
+                            <div class="bar-chart" id="barChart">
+                                <!-- ม.ค. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 65%;"
+                                            data-value="8.5M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 45%;"
+                                            data-value="180"></div>
+                                    </div>
+                                    <div class="bar-chart__label">ม.ค.</div>
+                                </div>
+
+                                <!-- ก.พ. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 72%;"
+                                            data-value="9.2M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 52%;"
+                                            data-value="195"></div>
+                                    </div>
+                                    <div class="bar-chart__label">ก.พ.</div>
+                                </div>
+
+                                <!-- มี.ค. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 78%;"
+                                            data-value="10.1M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 58%;"
+                                            data-value="210"></div>
+                                    </div>
+                                    <div class="bar-chart__label">มี.ค.</div>
+                                </div>
+
+                                <!-- เม.ย. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 68%;"
+                                            data-value="8.9M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 48%;"
+                                            data-value="185"></div>
+                                    </div>
+                                    <div class="bar-chart__label">เม.ย.</div>
+                                </div>
+
+                                <!-- พ.ค. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 85%;"
+                                            data-value="10.8M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 68%;"
+                                            data-value="228"></div>
+                                    </div>
+                                    <div class="bar-chart__label">พ.ค.</div>
+                                </div>
+
+                                <!-- มิ.ย. -->
+                                <div class="bar-chart__group">
+                                    <div class="bar-chart__bars">
+                                        <div class="bar-chart__bar bar-chart__bar--revenue" style="height: 100%;"
+                                            data-value="12.5M"></div>
+                                        <div class="bar-chart__bar bar-chart__bar--customers" style="height: 78%;"
+                                            data-value="248"></div>
+                                    </div>
+                                    <div class="bar-chart__label">มิ.ย.</div>
+                                </div>
+                            </div>
+
+                            <div class="chart-legend">
+                                <div class="chart-legend__item">
+                                    <div class="chart-legend__color chart-legend__color--revenue"></div>
+                                    <span>รายได้ (ล้านบาท)</span>
+                                </div>
+                                <div class="chart-legend__item">
+                                    <div class="chart-legend__color chart-legend__color--customers"></div>
+                                    <span>ลูกค้าใหม่ (ราย)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activities -->
+                        <div class="recent-activities">
+                            <div class="recent-activities__header">กิจกรรมล่าสุด</div>
+                            <div class="activity-list">
+
+                                <!-- Activity 1 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--success">✓</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">สมชาย ใจดี</span> ปิดการขายโครงการ CRM
+                                            System สำเร็จ มูลค่า 2.5 ล้านบาท
+                                        </div>
+                                        <div class="activity-item__meta">ทีมขาย • ลูกค้า: ABC Corporation</div>
+                                    </div>
+                                    <div class="activity-item__time">5 นาทีที่แล้ว</div>
+                                </div>
+
+                                <!-- Activity 2 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--info">📧</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">สมศรี วงศ์ดี</span>
+                                            ส่งข้อเสนอโครงการให้ลูกค้า 3 ราย
+                                        </div>
+                                        <div class="activity-item__meta">ฝ่ายขาย • Proposals: Digital Transformation
+                                        </div>
+                                    </div>
+                                    <div class="activity-item__time">32 นาทีที่แล้ว</div>
+                                </div>
+
+                                <!-- Activity 3 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--primary">🚀</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">วิชัย เทคโนโลยี</span> เริ่มโครงการ AI
+                                            Analytics Platform
+                                        </div>
+                                        <div class="activity-item__meta">ทีม Development • Phase: Discovery</div>
+                                    </div>
+                                    <div class="activity-item__time">1 ชั่วโมงที่แล้ว</div>
+                                </div>
+
+                                <!-- Activity 4 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--warning">⚠</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">ประพันธ์ โปรเจค</span>
+                                            รายงานความล่าช้าของโครงการ ERP Migration
+                                        </div>
+                                        <div class="activity-item__meta">Project Management • สถานะ: ต้องตรวจสอบ</div>
+                                    </div>
+                                    <div class="activity-item__time">2 ชั่วโมงที่แล้ว</div>
+                                </div>
+
+                                <!-- Activity 5 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--success">👥</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">นภาพร HR</span> เพิ่มพนักงานใหม่ 5 คน
+                                            เข้าทีม Development
+                                        </div>
+                                        <div class="activity-item__meta">ฝ่ายทรัพยากรบุคคล • Onboarding</div>
+                                    </div>
+                                    <div class="activity-item__time">3 ชั่วโมงที่แล้ว</div>
+                                </div>
+
+                                <!-- Activity 6 -->
+                                <div class="activity-item">
+                                    <div class="activity-item__icon activity-item__icon--info">📊</div>
+                                    <div class="activity-item__content">
+                                        <div class="activity-item__text">
+                                            <span class="activity-item__user">ธนากร การเงิน</span>
+                                            อัพเดทรายงานการเงินประจำเดือน
+                                        </div>
+                                        <div class="activity-item__meta">ฝ่ายการเงิน • Q2 2567</div>
+                                    </div>
+                                    <div class="activity-item__time">5 ชั่วโมงที่แล้ว</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <div class="dashboard-sidebar">
+
+                        <!-- Important Projects -->
+                        <div class="important-projects">
+                            <div class="important-projects__header">โครงการสำคัญ</div>
+                            <div class="important-projects__list">
+
+                                <!-- Project 1 -->
+                                <div class="project-item">
+                                    <div class="project-item__header">
+                                        <div>
+                                            <div class="project-item__title">AI Analytics Platform</div>
+                                            <div class="project-item__department">ทีม Development</div>
+                                        </div>
+                                        <div class="status-badge status-badge--active">กำลังดำเนินการ</div>
+                                    </div>
+                                    <div class="project-item__progress">
+                                        <div class="project-item__progress-label">
+                                            <span>ความคืบหน้า</span>
+                                            <span>68%</span>
+                                        </div>
+                                        <div class="project-item__progress-bar">
+                                            <div class="project-item__progress-fill" style="width: 68%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 2 -->
+                                <div class="project-item">
+                                    <div class="project-item__header">
+                                        <div>
+                                            <div class="project-item__title">CRM Integration</div>
+                                            <div class="project-item__department">IT Department</div>
+                                        </div>
+                                        <div class="status-badge status-badge--active">กำลังดำเนินการ</div>
+                                    </div>
+                                    <div class="project-item__progress">
+                                        <div class="project-item__progress-label">
+                                            <span>ความคืบหน้า</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="project-item__progress-bar">
+                                            <div class="project-item__progress-fill project-item__progress-fill--success"
+                                                style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 3 -->
+                                <div class="project-item">
+                                    <div class="project-item__header">
+                                        <div>
+                                            <div class="project-item__title">ERP Migration</div>
+                                            <div class="project-item__department">Operations</div>
+                                        </div>
+                                        <div class="status-badge status-badge--risk">ล่าช้า</div>
+                                    </div>
+                                    <div class="project-item__progress">
+                                        <div class="project-item__progress-label">
+                                            <span>ความคืบหน้า</span>
+                                            <span>42%</span>
+                                        </div>
+                                        <div class="project-item__progress-bar">
+                                            <div class="project-item__progress-fill project-item__progress-fill--danger"
+                                                style="width: 42%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 4 -->
+                                <div class="project-item">
+                                    <div class="project-item__header">
+                                        <div>
+                                            <div class="project-item__title">Mobile App v2.0</div>
+                                            <div class="project-item__department">Product Team</div>
+                                        </div>
+                                        <div class="status-badge status-badge--active">กำลังดำเนินการ</div>
+                                    </div>
+                                    <div class="project-item__progress">
+                                        <div class="project-item__progress-label">
+                                            <span>ความคืบหน้า</span>
+                                            <span>55%</span>
+                                        </div>
+                                        <div class="project-item__progress-bar">
+                                            <div class="project-item__progress-fill project-item__progress-fill--warning"
+                                                style="width: 55%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 5 -->
+                                <div class="project-item">
+                                    <div class="project-item__header">
+                                        <div>
+                                            <div class="project-item__title">Security Audit 2024</div>
+                                            <div class="project-item__department">Security Team</div>
+                                        </div>
+                                        <div class="status-badge status-badge--completed">สำเร็จ</div>
+                                    </div>
+                                    <div class="project-item__progress">
+                                        <div class="project-item__progress-label">
+                                            <span>ความคืบหน้า</span>
+                                            <span>100%</span>
+                                        </div>
+                                        <div class="project-item__progress-bar">
+                                            <div class="project-item__progress-fill project-item__progress-fill--success"
+                                                style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Action Items / To-do -->
+                        <div class="action-items">
+                            <div class="action-items__header">รายการที่ต้องดำเนินการ</div>
+                            <div class="action-items__list">
+
+                                <!-- Action 1 -->
+                                <div class="action-item action-item--urgent">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">อนุมัติงบประมาณโครงการ AI Platform</div>
+                                        <div class="action-item__priority action-item__priority--urgent">เร่งด่วน</div>
+                                    </div>
+                                    <div class="action-item__description">ต้องการการตัดสินใจภายในวันนี้</div>
+                                </div>
+
+                                <!-- Action 2 -->
+                                <div class="action-item action-item--urgent">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">ทบทวนปัญหา ERP Migration Delay</div>
+                                        <div class="action-item__priority action-item__priority--urgent">เร่งด่วน</div>
+                                    </div>
+                                    <div class="action-item__description">ประชุมกับทีม Operations วันพรุ่งนี้</div>
+                                </div>
+
+                                <!-- Action 3 -->
+                                <div class="action-item action-item--medium">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">ตรวจสอบรายงานการเงิน Q2</div>
+                                        <div class="action-item__priority action-item__priority--medium">ปานกลาง</div>
+                                    </div>
+                                    <div class="action-item__description">กำหนดส่งภายในสิ้นสัปดาห์</div>
+                                </div>
+
+                                <!-- Action 4 -->
+                                <div class="action-item action-item--medium">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">อนุมัติการจ้างพนักงานใหม่ 3 ตำแหน่ง</div>
+                                        <div class="action-item__priority action-item__priority--medium">ปานกลาง</div>
+                                    </div>
+                                    <div class="action-item__description">ฝ่าย HR รออนุมัติ</div>
+                                </div>
+
+                                <!-- Action 5 -->
+                                <div class="action-item action-item--normal">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">ลงนามสัญญาพันธมิตรใหม่</div>
+                                        <div class="action-item__priority action-item__priority--normal">ปกติ</div>
+                                    </div>
+                                    <div class="action-item__description">ทีมกฎหมายตรวจสอบแล้ว</div>
+                                </div>
+
+                                <!-- Action 6 -->
+                                <div class="action-item action-item--normal">
+                                    <div class="action-item__header">
+                                        <div class="action-item__title">Review ผล Performance ทีมขาย</div>
+                                        <div class="action-item__priority action-item__priority--normal">ปกติ</div>
+                                    </div>
+                                    <div class="action-item__description">เตรียมข้อมูลสำหรับประชุมเดือนหน้า</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+
+    <div class="chatbot-panel" id="chatbot">
+        <div class="chatbot-header">
+            SDDS AI Assistant
+            <button onclick="toggleChat()">✕</button>
+        </div>
+        <div class="chatbot-body">
+            <div class="chatbot-msg bot">สวัสดีครับ มีอะไรให้ช่วยไหม</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="พิมพ์คำสั่งถึง AI..." />
+            <button>ส่ง</button>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
