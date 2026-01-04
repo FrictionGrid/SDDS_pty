@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDDS | ภาพรวมโครงการ</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand__logo">
+                    <img src="logo.png" alt="SDDS">
+                </div>
+                <div>
+                    <div class="brand__name">SDDS</div>
+                    <div class="brand__tagline">Enterprise System</div>
+                </div>
+            </div>
+
+    
+            <nav class="nav">
+                <a href="customers.html" >Customers</a>
+                <a href="customer.html">Customer</a>
+                <a href="email_ai.html" >Email AI</a>
+                <a href="project.html" class="active" >Project</a>
+                <a href="project_detail.html">ProjectDetail</a>
+            </nav>
+         </aside>
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <div>
+                <div class="topbar__title">ภาพรวมโครงการ</div>
+                <div class="topbar__menu">Dashboard / Project Overview</div>
+            </div>
+            <div class="avatar"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main main--full">
+            <div class="content-wrapper">
+
+
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <input type="text" class="search-input" id="projectSearchInput"
+                        placeholder="ค้นหาชื่อโครงการ, หน่วยงาน..." />
+
+                    <button class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="14" y2="18"></line>
+                        </svg>
+                        ตัวกรอง
+                    </button>
+
+                    <div class="dropdown">
+                        <select id="projectStatusFilter">
+                            <option value="">สถานะโครงการ</option>
+                            <option value="completed">เสร็จสมบูรณ์</option>
+                            <option value="active">กำลังดำเนินงาน</option>
+                            <option value="risk">มีความเสี่ยง</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary" id="btnAddProject">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        สร้างโครงการใหม่
+                    </button>
+                </div>
+
+                <!-- Summary Cards -->
+                <div class="summary-grid">
+                    <!-- Card 1: All Projects -->
+                    <div class="summary-card summary-card--all">
+                        <div class="summary-card__number">24</div>
+                        <div class="summary-card__label">โครงการทั้งหมด</div>
+                        <div class="summary-card__detail">6 โครงการใหม่ในเดือนนี้</div>
+                    </div>
+
+                    <!-- Card 2: Completed -->
+                    <div class="summary-card summary-card--completed">
+                        <div class="summary-card__number">15</div>
+                        <div class="summary-card__label">โครงการที่เสร็จสิ้น</div>
+                        <div class="summary-card__detail">62.5% ของทั้งหมด</div>
+                    </div>
+
+                    <!-- Card 3: Active -->
+                    <div class="summary-card summary-card--active">
+                        <div class="summary-card__number">6</div>
+                        <div class="summary-card__label">กำลังดำเนินงาน</div>
+                        <div class="summary-card__detail">ตามแผนงาน</div>
+                    </div>
+
+                    <!-- Card 4: Risk -->
+                    <div class="summary-card summary-card--risk">
+                        <div class="summary-card__number">3</div>
+                        <div class="summary-card__label">โครงการที่มีปัญหา</div>
+                        <div class="summary-card__detail">ต้องติดตามเร่งด่วน</div>
+                    </div>
+                </div>
+
+           
+
+                <!-- All Projects Section -->
+                <div class="section-header">
+                    <h2 class="section-header__title">โครงการทั้งหมด</h2>
+                    <a href="#" class="section-header__action">จัดการโครงการ →</a>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-status="completed">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ระบบ HR Digital</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายทรัพยากรบุคคล
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--completed">เสร็จสมบูรณ์</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card" data-status="active">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">Website Redesign 2025</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายการตลาด
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--active">กำลังดำเนินงาน</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 - With Alert -->
+                    <div class="project-card" data-status="risk">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ระบบ CRM ใหม่ สาขาภาคกลาง</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่าย IT
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--risk">มีความเสี่ยง</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>45%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__alert">
+                            ⚠️ เสี่ยงต่อการล่าช้า
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card" data-status="completed">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ระบบจัดการคลังสินค้า</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายโลจิสติกส์
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--completed">เสร็จสมบูรณ์</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="project-card" data-status="active">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">LINE OA Automation</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายดิจิทัล
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--active">กำลังดำเนินงาน</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>82%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 - With Alert -->
+                    <div class="project-card" data-status="risk">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">Mobile App - ระบบจองคิว</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่าย IT
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--risk">มีความเสี่ยง</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 60%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__alert">
+                            ⚠️ งบประมาณเกินแผน
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7 -->
+                    <div class="project-card" data-status="active">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ระบบ Business Intelligence</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายวิเคราะห์ข้อมูล
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--active">กำลังดำเนินงาน</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>55%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 55%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 8 -->
+                    <div class="project-card" data-status="completed">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ระบบ E-Learning</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่ายพัฒนาบุคลากร
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--completed">เสร็จสมบูรณ์</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 9 - With Alert -->
+                    <div class="project-card" data-status="risk">
+                        <div class="project-card__header">
+                            <div>
+                                <div class="project-card__title">ปรับปรุงโครงสร้างพื้นฐาน IT</div>
+                                <div class="project-card__department">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    ฝ่าย IT
+                                </div>
+                            </div>
+                            <div class="project-card__status">
+                                <span class="status-badge status-badge--risk">มีความเสี่ยง</span>
+                            </div>
+                        </div>
+                        <div class="project-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__label">
+                                    <span>ความคืบหน้า</span>
+                                    <span>35%</span>
+                                </div>
+                                <div class="progress-bar__track">
+                                    <div class="progress-bar__fill" style="width: 35%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__alert">
+                            ⚠️ ทีมงานไม่เพียงพอ
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Add Project Modal -->
+    <div class="add-customer-modal" id="addProjectModal">
+        <div class="add-customer-modal__overlay"></div>
+        <div class="add-customer-modal__panel">
+            <div class="add-customer-modal__header">
+                <h3>สร้างโครงการใหม่</h3>
+                <button class="add-customer-modal__close">✕</button>
+            </div>
+
+            <div class="add-customer-modal__body">
+                <form class="customer-form">
+                    <!-- ชื่อโครงการ -->
+                    <div class="form-group">
+                        <label class="form-label">ชื่อโครงการ <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="กรอกชื่อโครงการ" required>
+                    </div>
+
+                    <!-- ชื่อลูกค้า/หน่วยงาน -->
+                    <div class="form-group">
+                        <label class="form-label">ชื่อลูกค้า/หน่วยงาน <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="กรอกชื่อลูกค้าหรือหน่วยงาน" required>
+                    </div>
+
+                    <!-- ประเภทโครงการ -->
+                    <div class="form-group">
+                        <label class="form-label">ประเภทโครงการ</label>
+                        <select class="form-select">
+                            <option value="">เลือกประเภทโครงการ</option>
+                            <option value="crm">CRM Integration</option>
+                            <option value="ai">AI Analytics Platform</option>
+                            <option value="web">Web Development</option>
+                            <option value="mobile">Mobile Application</option>
+                            <option value="hr">HR Digital System</option>
+                            <option value="bi">Business Intelligence</option>
+                            <option value="other">อื่นๆ</option>
+                        </select>
+                    </div>
+
+                    <!-- ฝ่าย/แผนก -->
+                    <div class="form-group">
+                        <label class="form-label">ฝ่าย/แผนก</label>
+                        <select class="form-select">
+                            <option value="">เลือกฝ่าย/แผนก</option>
+                            <option value="hr">ฝ่ายทรัพยากรบุคคล</option>
+                            <option value="marketing">ฝ่ายการตลาด</option>
+                            <option value="it">ฝ่าย IT</option>
+                            <option value="digital">ฝ่ายดิจิทัล</option>
+                            <option value="logistics">ฝ่ายโลจิสติกส์</option>
+                            <option value="analytics">ฝ่ายวิเคราะห์ข้อมูล</option>
+                            <option value="other">อื่นๆ</option>
+                        </select>
+                    </div>
+
+                    <!-- สถานะโครงการ -->
+                    <div class="form-group">
+                        <label class="form-label">สถานะโครงการ</label>
+                        <select class="form-select">
+                            <option value="">เลือกสถานะ</option>
+                            <option value="active">กำลังดำเนินงาน</option>
+                            <option value="pending">รอดำเนินการ</option>
+                            <option value="completed">เสร็จสมบูรณ์</option>
+                            <option value="risk">มีความเสี่ยง</option>
+                            <option value="onhold">พักไว้ชั่วคราว</option>
+                        </select>
+                    </div>
+
+                    <!-- วันที่เริ่มต้น -->
+                    <div class="form-group">
+                        <label class="form-label">วันที่เริ่มต้น</label>
+                        <input type="date" class="form-input">
+                    </div>
+
+                    <!-- วันที่สิ้นสุด (โดยประมาณ) -->
+                    <div class="form-group">
+                        <label class="form-label">วันที่สิ้นสุด (โดยประมาณ)</label>
+                        <input type="date" class="form-input">
+                    </div>
+
+                    <!-- งบประมาณ -->
+                    <div class="form-group">
+                        <label class="form-label">งบประมาณ (บาท)</label>
+                        <input type="number" class="form-input" placeholder="0.00" min="0" step="0.01">
+                    </div>
+
+                    <!-- ความคืบหน้า -->
+                    <div class="form-group">
+                        <label class="form-label">ความคืบหน้า (%)</label>
+                        <input type="number" class="form-input" placeholder="0-100" min="0" max="100" value="0">
+                    </div>
+
+                    <!-- ผู้จัดการโครงการ -->
+                    <div class="form-group">
+                        <label class="form-label">ผู้จัดการโครงการ</label>
+                        <input type="text" class="form-input" placeholder="ชื่อผู้จัดการโครงการ">
+                    </div>
+
+                    <!-- รายละเอียด -->
+                    <div class="form-group">
+                        <label class="form-label">รายละเอียดโครงการ</label>
+                        <textarea class="form-textarea" rows="4" placeholder="รายละเอียดเพิ่มเติม..."></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="add-customer-modal__footer">
+                <button class="btn-cancel">ยกเลิก</button>
+                <button class="btn-submit">สร้างโครงการ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+
+    <div class="chatbot-panel" id="chatbot">
+        <div class="chatbot-header">
+            SDDS AI Assistant
+            <button onclick="toggleChat()">✕</button>
+        </div>
+        <div class="chatbot-body">
+            <div class="chatbot-msg bot">สวัสดีครับ มีอะไรให้ช่วยไหม</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="พิมพ์คำสั่งถึง AI..." />
+            <button>ส่ง</button>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/project.js"></script>
+</body>
+
+</html>
